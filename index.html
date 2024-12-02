@@ -39,8 +39,8 @@
         }
         header img {
             border-radius: 50%;
-            width: 300px;
-            height: 300px;
+            width: 450px;
+            height: 450px;
             margin-right: 30px;
             align-self: center;
         }
@@ -61,22 +61,6 @@
             margin: 15px 0;
             font-size: 1.2em;
             color: #ccc;
-        }
-        .skills {
-            margin-top: 25px;
-            font-size: 0.9em;
-            color: #f4f4f4;
-        }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .skills ul li {
-            width: 45%;
-            margin-bottom: 10px;
-            font-size: 0.8em;
         }
         header a.resume {
             padding: 15px 25px;
@@ -127,6 +111,7 @@
             background-color: #666;
             padding: 20px;
             border-radius: 10px;
+            width: 100%;
         }
         .speciality-item {
             width: 30%;
@@ -134,6 +119,29 @@
             background-color: #777;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
+        }
+        .skills-container {
+            background-color: #666;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .skills-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .skill-item {
+            background-color: #777;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: 1.1em;
         }
         .assignments {
             display: flex;
@@ -173,23 +181,24 @@
                     <h1>Steve Dang</h1>
                     <div class="university">Pennsylvania State University<br>Class of 2026</div>
                     <p>Functional Data Analytics and Information Sciences and Technology</p>
-                    <div class="skills">
-                        <ul>
-                            <li>SQL</li>
-                            <li>Python</li>
-                            <li>R</li>
-                            <li>HTML & CSS</li>
-                            <li>C++</li>
-                            <li>Data Analysis</li>
-                            <li>Web Scraping</li>
-                            <li>Data Visualization</li>
-                            <li>Machine Learning Basics</li>
-                            <li>Tableau</li>
-                        </ul>
-                    </div>
                     <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
                 </div>
             </header>
+            <section class="skills-container">
+                <h3>Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">HTML & CSS</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">Web Scraping</div>
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">Machine Learning Basics</div>
+                    <div class="skill-item">Tableau</div>
+                </div>
+            </section>
         </div>
         <div class="right-side">
             <section class="hero">
@@ -244,4 +253,3 @@
     </section>
 </body>
 </html>
-

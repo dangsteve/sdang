@@ -20,11 +20,11 @@
             display: flex;
         }
         .left-side {
-            width: 33%;
+            width: 40%;
             padding-right: 20px;
         }
         .right-side {
-            width: 67%;
+            width: 60%;
         }
         header {
             display: flex;
@@ -34,6 +34,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             margin-bottom: 40px;
             border-radius: 10px;
+            width: 100%;
         }
         header img {
             border-radius: 50%;
@@ -43,15 +44,20 @@
         }
         header .intro {
             text-align: left;
+            width: 100%;
         }
         header .intro h1 {
             margin: 0;
             font-size: 3em;
-            width: 100%;
         }
         header .intro p {
             margin: 10px 0;
             color: #ccc;
+        }
+        .skills {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #f4f4f4;
         }
         header a.resume {
             padding: 15px 25px;
@@ -61,6 +67,7 @@
             border-radius: 5px;
             font-weight: bold;
             display: inline-block;
+            margin-top: 15px;
         }
         header a.resume:hover {
             background-color: #e74c3c;
@@ -72,6 +79,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
+            width: 100%;
         }
         .hero h2 {
             font-size: 3em;
@@ -125,6 +133,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
+        .assignment-item:nth-child(1), .assignment-item:nth-child(2), .assignment-item:nth-child(3) {
+            margin-bottom: 20px;
+        }
         a {
             color: #c0392b;
             text-decoration: none;
@@ -142,6 +153,9 @@
                 <div class="intro">
                     <h1>Steve Dang</h1>
                     <p>Functional Data Analytics and Information Sciences and Technology</p>
+                    <div class="skills">
+                        <strong>Skills:</strong> SQL, Python, R, HTML & CSS, C++, Data Analysis, Web Scraping, Data Visualization, Machine Learning Basics
+                    </div>
                     <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
                 </div>
             </header>
@@ -199,4 +213,5 @@
     </section>
 </body>
 </html>
+
 

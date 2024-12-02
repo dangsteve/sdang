@@ -81,6 +81,7 @@ while True:
                     print(f"Shifted to gear {gear}. Current speed: {current_speed} km/h")
                 else:
                     fail_count += 1  # Increment the fail count if the shift fails
+                    success_increase += 25  # Increase success probability by 25% after each failed shift
                     print("Gear shift failed. Try again.")
 
                     # Check if the player has failed too many times

@@ -28,7 +28,7 @@
         }
         header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 20px;
             background-color: #444;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -48,16 +48,30 @@
         }
         header .intro h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 3.2em;
         }
         header .intro p {
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 1.4em;
             color: #ccc;
         }
         .skills {
-            margin-top: 10px;
+            margin-top: 15px;
             font-size: 1.2em;
             color: #f4f4f4;
+        }
+        .skills strong {
+            font-size: 1.4em;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skills ul li {
+            width: 45%;
+            margin-bottom: 10px;
         }
         header a.resume {
             padding: 15px 25px;
@@ -67,7 +81,7 @@
             border-radius: 5px;
             font-weight: bold;
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         header a.resume:hover {
             background-color: #e74c3c;
@@ -154,7 +168,18 @@
                     <h1>Steve Dang</h1>
                     <p>Functional Data Analytics and Information Sciences and Technology</p>
                     <div class="skills">
-                        <strong>Skills:</strong> SQL, Python, R, HTML & CSS, C++, Data Analysis, Web Scraping, Data Visualization, Machine Learning Basics
+                        <strong>Skills:</strong>
+                        <ul>
+                            <li>SQL</li>
+                            <li>Python</li>
+                            <li>R</li>
+                            <li>HTML & CSS</li>
+                            <li>C++</li>
+                            <li>Data Analysis</li>
+                            <li>Web Scraping</li>
+                            <li>Data Visualization</li>
+                            <li>Machine Learning Basics</li>
+                        </ul>
                     </div>
                     <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
                 </div>

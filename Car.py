@@ -18,6 +18,10 @@ top_gear = 6
 # Variable to track the success increase per successful shift
 success_increase = 0
 
+# Variable to track the number of breaks or failed shifts
+fail_count = 0
+max_fail_count = 10
+
 # Infinite loop to keep the program running until 'quit' command is given
 while True:
     # Get user input, convert it to lowercase, and store it in the 'command' variable
@@ -45,7 +49,13 @@ while True:
             started = False
             gear = 1
             success_increase = 0
+            fail_count += 1
             print("Car stopped, returning to gear 1.")
+
+            # Check if the player has failed too many times
+            if fail_count >= max_fail_count:
+                print("You have failed too many times. You are in last place.")
+                break
 
     # If the user enters "shift gear"
     elif command == "shift gear":
@@ -66,13 +76,22 @@ while True:
                     current_speed = gear * gear_speed_increment
                     print(f"Shifted to gear {gear}. Current speed: {current_speed} km/h")
                 else:
+                    fail_count += 1
                     print("Gear shift failed. Try again.")
+
+                    # Check if the player has failed too many times
+                    if fail_count >= max_fail_count:
+                        print("You have failed too many times. You are in last place.")
+                        break
             else:
                 print("Already in top gear!")
 
             # Check if the player has reached top gear
             if gear == top_gear:
-                print("Congratulations! You have reached gear 6 and won the game!")
+                if fail_count == 0:
+                    print("Congratulations! You have reached gear 6 and won the game in first place!")
+                else:
+                    print(f"Congratulations! You have reached gear 6 and finished in place {fail_count + 1}!")
                 break
 
     # If the user enters "help"
@@ -94,4 +113,3 @@ quit - to quit
     # If the user enters something else, print an error message
     else:
         print("I don't understand that...")
-

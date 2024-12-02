@@ -14,31 +14,89 @@
             color: #333;
         }
         .container {
-            max-width: 900px;
-            margin: 50px auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        header .intro {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 20px;
+        }
+        header .intro h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header .intro p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .hero {
+            background-color: #fff;
+            padding: 60px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .hero a {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .hero a:hover {
+            background-color: #2980b9;
+        }
+        .specialities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .speciality-item {
+            background-color: #fff;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        header {
-            text-align: center;
-            padding-bottom: 20px;
+        .assignments .assignment-item {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        header h1 {
-            margin: 0;
-        }
-        .section-title {
-            border-bottom: 2px solid #333;
-            margin: 20px 0;
-            font-size: 1.5em;
-            padding-bottom: 10px;
-        }
-        .about-me, .assignments {
-            margin-top: 20px;
-        }
-        .assignment-item {
-            margin-bottom: 15px;
+        .assignments h3 {
+            margin-top: 0;
         }
         a {
             color: #3498db;
@@ -52,16 +110,36 @@
 <body>
     <div class="container">
         <header>
-            <h1>Steve Dang</h1>
-            <p>Major: Functional Data Analytics and Information Sciences and Technology</p>
+            <img src="steve.png" alt="Steve Dang">
+            <div class="intro">
+                <h1>Steve Dang</h1>
+                <p>Functional Data Analytics and Information Sciences and Technology</p>
+            </div>
+            <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
         </header>
 
-        <section class="about-me">
-            <div class="section-title">About Me</div>
-            <p>Hi, I'm Steve! I'm currently majoring in Functional Data Analytics and Information Sciences and Technology. I have a strong passion for data analysis and using technology to solve real-world problems. On this page, you'll find some of my academic assignments and projects that showcase my skills and learning journey.</p>
+        <section class="hero">
+            <h2>An Interactive Data Analyst</h2>
+            <p>Welcome to my portfolio! Here, you can explore my projects that reflect my passion for data analytics, technology, and creative problem solving. Let's transform data into meaningful insights together.</p>
+            <a href="#projects">View My Projects</a>
         </section>
 
-        <section class="assignments">
+        <section class="specialities">
+            <div class="speciality-item">
+                <h3>Data Analytics</h3>
+                <p>Transforming raw data into actionable insights to help drive better decision-making processes.</p>
+            </div>
+            <div class="speciality-item">
+                <h3>Web Scraping</h3>
+                <p>Gathering data from websites to extract valuable information for analysis and insights.</p>
+            </div>
+            <div class="speciality-item">
+                <h3>Interactive Games</h3>
+                <p>Creating engaging games using Python and C++ to explore problem-solving techniques and interactivity.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="assignments">
             <div class="section-title">Assignments and Projects</div>
             <div class="assignment-item">
                 <h3>Project 1: Car Analysis Script in Python</h3>
@@ -82,6 +160,11 @@
                 <h3>Project 4: Yelp Data Scraping in R</h3>
                 <p>R script for web scraping data from Yelp to gather information for analysis.</p>
                 <a href="Yelp_Scraping.R" target="_blank">View Project</a>
+            </div>
+            <div class="assignment-item">
+                <h3>Project 5: Word Guessing Game in Python</h3>
+                <p>A Python game where users try to guess a secret word, with hints provided for each incorrect guess.</p>
+                <a href="Word_guessing.py" target="_blank">View Project</a>
             </div>
         </section>
     </div>

@@ -15,6 +15,9 @@ max_speed = 180
 gear_speed_increment = 30
 top_gear = 6
 
+# Variable to track the success increase per successful shift
+success_increase = 0
+
 # Infinite loop to keep the program running until 'quit' command is given
 while True:
     # Get user input, convert it to lowercase, and store it in the 'command' variable
@@ -38,10 +41,11 @@ while True:
             # If it is, print that it's already stopped
             print("Car is already stopped")
         else:
-            # If not, set 'started' to False, reset gear to 0 and print that the car has stopped
+            # If not, set 'started' to False, reset gear to 1 and print that the car has stopped
             started = False
-            gear = 0
-            print("Car stopped")
+            gear = 1
+            success_increase = 0
+            print("Car stopped, returning to gear 1.")
 
     # If the user enters "shift gear"
     elif command == "shift gear":
@@ -52,11 +56,13 @@ while True:
             # Shift to the next gear if it's below the top gear
             if gear < top_gear:
                 # Calculate the probability of successful gear shift
-                success_probability = 100 - (gear * 50)
+                success_probability = 100 - (gear * 50) + success_increase
+                success_probability = min(success_probability, 100)  # Cap the probability at 100%
                 success = random.randint(1, 100) <= success_probability
 
                 if success:
                     gear += 1
+                    success_increase += 5
                     current_speed = gear * gear_speed_increment
                     print(f"Shifted to gear {gear}. Current speed: {current_speed} km/h")
                 else:
@@ -88,3 +94,4 @@ quit - to quit
     # If the user enters something else, print an error message
     else:
         print("I don't understand that...")
+

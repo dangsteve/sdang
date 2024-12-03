@@ -50,10 +50,10 @@
         }
         header .intro h1 {
             margin: 0;
-            font-size: 3.2em;
+            font-size: 3em;
         }
         header .intro .university {
-            font-size: 2em;
+            font-size: 1.6em;
             margin-top: 10px;
             color: #ccc;
         }
@@ -62,21 +62,30 @@
             font-size: 1.2em;
             color: #ccc;
         }
-        .skills {
-            margin-top: 25px;
-            font-size: 0.9em;
-            color: #f4f4f4;
+        .skills-container {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            text-align: center;
         }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
+        .skills-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .skills {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
-        .skills ul li {
-            width: 45%;
-            margin-bottom: 10px;
-            font-size: 0.8em;
+        .skill-item {
+            background-color: #555;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: 1em;
         }
         header a.resume {
             padding: 15px 25px;
@@ -105,20 +114,9 @@
             margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             line-height: 1.6;
             margin-bottom: 40px;
-        }
-        .hero a {
-            padding: 20px 30px;
-            background-color: #c0392b;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .hero a:hover {
-            background-color: #e74c3c;
         }
         .specialities {
             display: flex;
@@ -176,21 +174,21 @@
                     <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
                 </div>
             </header>
-            <section class="skills">
+            <div class="skills-container">
                 <h2>Skills</h2>
-                <div class="specialities">
-                    <div class="speciality-item">SQL</div>
-                    <div class="speciality-item">Python</div>
-                    <div class="speciality-item">R</div>
-                    <div class="speciality-item">HTML & CSS</div>
-                    <div class="speciality-item">C++</div>
-                    <div class="speciality-item">Data Analysis</div>
-                    <div class="speciality-item">Web Scraping</div>
-                    <div class="speciality-item">Data Visualization</div>
-                    <div class="speciality-item">Machine Learning Basics</div>
-                    <div class="speciality-item">Tableau</div>
+                <div class="skills">
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">HTML & CSS</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">Web Scraping</div>
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">Machine Learning Basics</div>
+                    <div class="skill-item">Tableau</div>
                 </div>
-            </section>
+            </div>
         </div>
         <div class="right-side">
             <section class="hero">
@@ -217,8 +215,8 @@
 
     <section id="projects" class="assignments">
         <div class="assignment-item">
-            <h3>Project 1: Car Analysis Script in Python</h3>
-            <p>Python game for analyzing car data and interacting with users through gameplay.</p>
+            <h3>Project 1: Car Racing Game in Python</h3>
+            <p>Python game for car racing and interacting with users through gameplay.</p>
             <a href="Car.py" target="_blank">View Project</a>
         </div>
         <div class="assignment-item">

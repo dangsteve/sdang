@@ -50,10 +50,10 @@
         }
         header .intro h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-size: 3.2em;
         }
         header .intro .university {
-            font-size: 1.6em;
+            font-size: 2em;
             margin-top: 10px;
             color: #ccc;
         }
@@ -62,28 +62,21 @@
             font-size: 1.2em;
             color: #ccc;
         }
-        .skills-section {
+        .skills {
             margin-top: 25px;
-            background-color: #555;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
+            font-size: 0.9em;
+            color: #f4f4f4;
         }
-        .skills-section h2 {
-            margin-bottom: 20px;
-        }
-        .skills-container {
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
         }
-        .skill-item {
-            background-color: #777;
-            color: #f4f4f4;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            font-size: 0.9em;
+        .skills ul li {
+            width: 45%;
+            margin-bottom: 10px;
+            font-size: 0.8em;
         }
         header a.resume {
             padding: 15px 25px;
@@ -108,11 +101,11 @@
             width: 100%;
         }
         .hero h2 {
-            font-size: 2.8em;
+            font-size: 3em;
             margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             line-height: 1.6;
             margin-bottom: 40px;
         }
@@ -183,19 +176,19 @@
                     <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
                 </div>
             </header>
-            <section class="skills-section">
+            <section class="skills">
                 <h2>Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">R</div>
-                    <div class="skill-item">HTML & CSS</div>
-                    <div class="skill-item">C++</div>
-                    <div class="skill-item">Data Analysis</div>
-                    <div class="skill-item">Web Scraping</div>
-                    <div class="skill-item">Data Visualization</div>
-                    <div class="skill-item">Machine Learning Basics</div>
-                    <div class="skill-item">Tableau</div>
+                <div class="specialities">
+                    <div class="speciality-item">SQL</div>
+                    <div class="speciality-item">Python</div>
+                    <div class="speciality-item">R</div>
+                    <div class="speciality-item">HTML & CSS</div>
+                    <div class="speciality-item">C++</div>
+                    <div class="speciality-item">Data Analysis</div>
+                    <div class="speciality-item">Web Scraping</div>
+                    <div class="speciality-item">Data Visualization</div>
+                    <div class="speciality-item">Machine Learning Basics</div>
+                    <div class="speciality-item">Tableau</div>
                 </div>
             </section>
         </div>
@@ -203,7 +196,7 @@
             <section class="hero">
                 <h2>An Interactive Data Analyst</h2>
                 <p>Welcome to my portfolio! Here, you can explore my projects that reflect my passion for data analytics, technology, and creative problem-solving. Let's transform data into meaningful insights together. I have experience working with data analytics, web scraping, and creating interactive games that demonstrate my problem-solving skills and creativity.</p>
-                </section>
+            </section>
 
             <section class="specialities">
                 <div class="speciality-item">
@@ -248,6 +241,12 @@
             <p>A Python game where users try to guess a secret word, with hints provided for each incorrect guess.</p>
             <a href="Word_guessing.py" target="_blank">View Project</a>
         </div>
+        <div class="assignment-item">
+            <h3>Project 6: Budget Tracker in Python</h3>
+            <p>A Python script to help users track their expenses and manage their budget efficiently.</p>
+            <a href="Budget_Tracker.py" target="_blank">View Project</a>
+        </div>
     </section>
 </body>
 </html>
+

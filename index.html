@@ -38,7 +38,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://github.com/dangsteve/sdang/raw/main/wallpaper.jpg'); /* Background image from GitHub */
+            background-image: url('https://github.com/dangsteve/sdang/raw/main/wallpaper.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -46,10 +46,10 @@
             color: #fff;
         }
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3em;
         }
         .hero p {
-            font-size: 1.5em;
+            font-size: 1.25em;
             margin: 20px 0;
         }
         .hero .buttons {
@@ -62,17 +62,39 @@
             background-color: #c0392b;
             color: #fff;
             border-radius: 5px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         .hero button:hover {
             background-color: #e74c3c;
         }
-        .skills, .projects, .experience {
+        section {
             padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        .skills, .projects {
+            text-align: center;
+        }
+        .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .skills-grid .skill, .projects-grid .project {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .skills-grid .skill:hover, .projects-grid .project:hover {
+            transform: scale(1.05);
+        }
+        .skills-grid .skill h3, .projects-grid .project h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
         .about .content {
             text-align: center;
@@ -97,10 +119,10 @@
         }
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 3em;
+                font-size: 2.5em;
             }
             .hero p {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
         }
         form {
@@ -157,7 +179,7 @@
 
     <section id="about" class="about">
         <div class="content">
-            <img src="https://github.com/dangsteve/sdang/raw/main/steve.png" alt="Steve Dang"> <!-- Profile image from GitHub -->
+            <img src="https://github.com/dangsteve/sdang/raw/main/steve.png" alt="Steve Dang">
             <h2>About Me</h2>
             <p>I am a passionate data analyst specializing in transforming data into actionable insights. Currently, I am studying Functional Data Analytics and Information Sciences and Technology at Pennsylvania State University, Class of 2026. My focus is on making complex data easily understandable for decision-making. I have experience in data visualization, web scraping, and creating interactive games that combine fun with analytical skills. My goal is to use technology and data-driven analysis to generate impactful solutions.</p>
         </div>
@@ -166,16 +188,36 @@
     <section id="skills" class="skills">
         <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill">SQL</div>
-            <div class="skill">Python</div>
-            <div class="skill">R</div>
-            <div class="skill">HTML & CSS</div>
-            <div class="skill">C++</div>
-            <div class="skill">Data Analysis</div>
-            <div class="skill">Web Scraping</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Machine Learning Basics</div>
-            <div class="skill">Tableau</div>
+            <div class="skill">
+                <h3>SQL</h3>
+            </div>
+            <div class="skill">
+                <h3>Python</h3>
+            </div>
+            <div class="skill">
+                <h3>R</h3>
+            </div>
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+            </div>
+            <div class="skill">
+                <h3>C++</h3>
+            </div>
+            <div class="skill">
+                <h3>Data Analysis</h3>
+            </div>
+            <div class="skill">
+                <h3>Web Scraping</h3>
+            </div>
+            <div class="skill">
+                <h3>Data Visualization</h3>
+            </div>
+            <div class="skill">
+                <h3>Machine Learning Basics</h3>
+            </div>
+            <div class="skill">
+                <h3>Tableau</h3>
+            </div>
         </div>
     </section>
 
@@ -232,5 +274,4 @@
     </footer>
 </body>
 </html>
-
 

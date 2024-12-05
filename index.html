@@ -91,17 +91,17 @@
 
         .skills-grid, .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
-            gap: 3vw;
+            grid-template-columns: repeat(auto-fit, minmax(16vw, 1fr)); /* Reduced min-width by 20% */
+            gap: 2.4vw; /* Reduced gap by 20% */
         }
 
         .skills-grid .skill, .projects-grid .project {
             background-color: rgba(85, 85, 85, 0.9);
-            padding: 3vw;
-            border-radius: 2vw;
+            padding: 2.4vw; /* Reduced padding by 20% */
+            border-radius: 1.6vw; /* Reduced border-radius by 20% */
             text-align: center;
             transition: transform 0.3s ease;
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
         }
 
         .skills-grid .skill:hover, .projects-grid .project:hover {
@@ -109,18 +109,18 @@
         }
 
         .skills-grid .skill h3, .projects-grid .project h3 {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            margin-bottom: 1.5vw;
+            font-size: clamp(1rem, 2.4vw, 1.6rem); /* Reduced font size by 20% */
+            margin-bottom: 1.2vw; /* Reduced margin-bottom by 20% */
         }
 
         .projects-grid .project p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 2vw;
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
+            margin-bottom: 1.6vw; /* Reduced margin-bottom by 20% */
         }
 
         .projects-grid a button {
-            padding: 1.5vw 2vw;
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            padding: 1.2vw 1.6vw; /* Reduced padding by 20% */
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
         }
 
         .about {
@@ -132,8 +132,8 @@
         }
 
         .about img {
-            width: clamp(200px, 20vw, 400px);
-            height: clamp(200px, 20vw, 400px);
+            width: clamp(240px, 24vw, 480px); /* Increased width by 20% */
+            height: clamp(240px, 24vw, 480px); /* Increased height by 20% */
             border-radius: 2vw;
             margin-bottom: 2vw;
             box-shadow: 0 0.4vw 1.5vw rgba(0, 0, 0, 0.5);
@@ -330,4 +330,5 @@
 </body>
 
 </html>
+
 

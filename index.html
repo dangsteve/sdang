@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steve Dang - Portfolio</title>
+    <title>Steve Dang - Interactive Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -12,239 +13,224 @@
             padding: 0;
             background-color: #333;
             color: #f4f4f4;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .left-side {
-            width: 50%;
-            padding-right: 20px;
-        }
-        .right-side {
-            width: 50%;
+            overflow-x: hidden;
         }
         header {
             display: flex;
             align-items: center;
-            padding: 20px;
+            justify-content: flex-start;
+            padding: 20px 40px;
             background-color: #444;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px;
-            border-radius: 10px;
+            position: fixed;
             width: 100%;
+            top: 0;
+            z-index: 100;
+            transition: top 0.3s ease;
         }
-        header img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            margin-right: 30px;
-            align-self: center;
-        }
-        header .intro {
-            text-align: left;
-            width: 100%;
-        }
-        header .intro h1 {
+        header h1 {
+            font-size: 1.5rem;
             margin: 0;
-            font-size: 3em;
-        }
-        header .intro .university {
-            font-size: 1.6em;
-            margin-top: 10px;
-            color: #ccc;
-        }
-        header .intro p {
-            margin: 15px 0;
-            font-size: 1.2em;
-            color: #ccc;
-        }
-        .skills-container {
-            background-color: #444;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            margin-top: 20px;
-            text-align: center;
-        }
-        .skills-container h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .skill-item {
-            background-color: #555;
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            font-size: 1em;
-        }
-        header a.resume {
-            padding: 15px 25px;
-            background-color: #c0392b;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        header a.resume:hover {
-            background-color: #e74c3c;
+            color: #f4f4f4;
         }
         .hero {
-            background-color: #555;
-            padding: 60px 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://github.com/dangsteve/sdang/raw/main/wallpaper.jpg'); /* Background image from GitHub */
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            width: 100%;
+            padding: 20px;
+            color: #fff;
         }
-        .hero h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: 3.5em;
         }
         .hero p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 40px;
+            font-size: 1.5em;
+            margin: 20px 0;
         }
-        .specialities {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-            background-color: #666;
-            padding: 20px;
-            border-radius: 10px;
+        .hero .buttons {
+            margin-top: 20px;
         }
-        .speciality-item {
-            width: 30%;
-            padding: 20px;
-            background-color: #777;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-        .assignments {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-            background-color: #444;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        .assignment-item {
-            width: 30%;
-            padding: 20px;
+        .hero button {
+            padding: 15px 30px;
             margin: 10px;
-            background-color: #555;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
+            border: none;
+            background-color: #c0392b;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .assignment-item:nth-child(1), .assignment-item:nth-child(2), .assignment-item:nth-child(3) {
+        .hero button:hover {
+            background-color: #e74c3c;
+        }
+        .skills, .projects, .experience {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about .content {
+            text-align: center;
+            padding: 50px;
+        }
+        .about img {
+            width: 400px;
+            height: 400px;
+            border-radius: 15px;
             margin-bottom: 20px;
         }
-        a {
-            color: #c0392b;
-            text-decoration: none;
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
         }
-        a:hover {
-            text-decoration: underline;
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #444;
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form input, form textarea, form button {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+        }
+        form button {
+            background-color: #c0392b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #e74c3c;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("header");
+            document.addEventListener("mousemove", function(e) {
+                if (e.clientY < 50) {
+                    header.style.top = "0";
+                } else {
+                    header.style.top = "-80px";
+                }
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="left-side">
-            <header>
-                <img src="steve.png" alt="Steve Dang">
-                <div class="intro">
-                    <h1>Steve Dang</h1>
-                    <div class="university">Pennsylvania State University<br>Class of 2026</div>
-                    <p>Functional Data Analytics and Information Sciences and Technology</p>
-                    <a href="https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing&ouid=110845298809858798575&rtpof=true&sd=true" class="resume" target="_blank">View My Resume</a>
-                </div>
-            </header>
-            <div class="skills-container">
-                <h2>Skills</h2>
-                <div class="skills">
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">R</div>
-                    <div class="skill-item">HTML & CSS</div>
-                    <div class="skill-item">C++</div>
-                    <div class="skill-item">Data Analysis</div>
-                    <div class="skill-item">Web Scraping</div>
-                    <div class="skill-item">Data Visualization</div>
-                    <div class="skill-item">Machine Learning Basics</div>
-                    <div class="skill-item">Tableau</div>
-                </div>
+    <header>
+        <h1>Steve Dang</h1>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Steve Dang</h1>
+            <p>Data Analyst & Interactive Developer - Transforming data into meaningful insights.</p>
+            <div class="buttons">
+                <button onclick="window.open('https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing', '_blank')">View Resume</button>
+                <button onclick="window.open('https://github.com/dangsteve/sdang', '_blank')">View GitHub</button>
             </div>
         </div>
-        <div class="right-side">
-            <section class="hero">
-                <h2>An Interactive Data Analyst</h2>
-                <p>Welcome to my portfolio! Here, you can explore my projects that reflect my passion for data analytics, technology, and creative problem-solving. Let's transform data into meaningful insights together. I have experience working with data analytics, web scraping, and creating interactive games that demonstrate my problem-solving skills and creativity.</p>
-            </section>
+    </section>
 
-            <section class="specialities">
-                <div class="speciality-item">
-                    <h3>Data Analytics</h3>
-                    <p>Transforming raw data into actionable insights to help drive better decision-making processes.</p>
-                </div>
-                <div class="speciality-item">
-                    <h3>Web Scraping</h3>
-                    <p>Gathering data from websites to extract valuable information for analysis and insights.</p>
-                </div>
-                <div class="speciality-item">
-                    <h3>Interactive Games</h3>
-                    <p>Creating engaging games using Python and C++ to explore problem-solving techniques and interactivity.</p>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <section id="projects" class="assignments">
-        <div class="assignment-item">
-            <h3>Project 1: Car Racing Game in Python</h3>
-            <p>Python game for car racing and interacting with users through gameplay.</p>
-            <a href="Car.py" target="_blank">View Project</a>
-        </div>
-        <div class="assignment-item">
-            <h3>Project 2: Student Expense Analysis in R</h3>
-            <p>An R script that performs linear regression on student costs and income to identify patterns and relationships.</p>
-            <a href="Student_Expense.R" target="_blank">View Project</a>
-        </div>
-        <div class="assignment-item">
-            <h3>Project 3: Wait, Wait, Don't Tell Me Game in C++</h3>
-            <p>A C++ guessing game that challenges users to make guesses and provides feedback for a fun experience.</p>
-            <a href="Wait%2C%20Wait%2C%20Don%27t%20Tell%20Me.cpp" target="_blank">View Project</a>
-        </div>
-        <div class="assignment-item">
-            <h3>Project 4: Yelp Data Scraping in R</h3>
-            <p>R script for web scraping data from Yelp to gather information for analysis.</p>
-            <a href="Yelp_Scraping.R" target="_blank">View Project</a>
-        </div>
-        <div class="assignment-item">
-            <h3>Project 5: Word Guessing Game in Python</h3>
-            <p>A Python game where users try to guess a secret word, with hints provided for each incorrect guess.</p>
-            <a href="Word_guessing.py" target="_blank">View Project</a>
-        </div>
-        <div class="assignment-item">
-            <h3>Project 6: Budget Tracker in Python</h3>
-            <p>A Python script to help users track their expenses and manage their budget efficiently.</p>
-            <a href="Budget_Tracker.py" target="_blank">View Project</a>
+    <section id="about" class="about">
+        <div class="content">
+            <img src="https://github.com/dangsteve/sdang/raw/main/steve.png" alt="Steve Dang"> <!-- Profile image from GitHub -->
+            <h2>About Me</h2>
+            <p>I am a passionate data analyst specializing in transforming data into actionable insights. Currently, I am studying Functional Data Analytics and Information Sciences and Technology at Pennsylvania State University, Class of 2026. My focus is on making complex data easily understandable for decision-making. I have experience in data visualization, web scraping, and creating interactive games that combine fun with analytical skills. My goal is to use technology and data-driven analysis to generate impactful solutions.</p>
         </div>
     </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">SQL</div>
+            <div class="skill">Python</div>
+            <div class="skill">R</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">C++</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Web Scraping</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Machine Learning Basics</div>
+            <div class="skill">Tableau</div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <h3>Car Analysis Script in Python</h3>
+                <p>Python game for analyzing car data and interacting with users through gameplay.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Car.py', '_blank')">View Project</button>
+            </div>
+            <div class="project">
+                <h3>Student Expense Analysis in R</h3>
+                <p>An R script that performs linear regression on student costs and income to identify patterns and relationships.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Student_Expense.R', '_blank')">View Project</button>
+            </div>
+            <div class="project">
+                <h3>Wait, Wait, Don't Tell Me Game in C++</h3>
+                <p>A C++ guessing game that challenges users to make guesses and provides feedback for a fun experience.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Wait%2C%20Wait%2C%20Don%27t%20Tell%20Me.cpp', '_blank')">View Project</button>
+            </div>
+            <div class="project">
+                <h3>Yelp Data Scraping in R</h3>
+                <p>R script for web scraping data from Yelp to gather information for analysis.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Yelp_Scraping.R', '_blank')">View Project</button>
+            </div>
+            <div class="project">
+                <h3>Word Guessing Game in Python</h3>
+                <p>A Python game where users try to guess a secret word, with hints provided for each incorrect guess.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Word_guessing.py', '_blank')">View Project</button>
+            </div>
+            <div class="project">
+                <h3>Budget Tracker in Python</h3>
+                <p>A Python script to help users track their expenses and manage their budget efficiently.</p>
+                <button onclick="window.open('https://github.com/dangsteve/sdang/blob/main/Budget_Tracker.py', '_blank')">View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 style="margin-left: 40px;">Contact</h2>
+        <div style="margin-left: 40px;">
+            <form action="mailto:dangstevework@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Steve Dang - All Rights Reserved
+    </footer>
 </body>
 </html>
+
 

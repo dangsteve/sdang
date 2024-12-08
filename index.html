@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,135 +8,186 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #333;
+            font-family: 'Roboto', sans-serif;
+            background: url('https://github.com/dangsteve/sdang/raw/main/wallpaper.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #f4f4f4;
             overflow-x: hidden;
         }
+
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #444;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            justify-content: flex-start;
+            padding: 2vw;
+            background-color: rgba(68, 68, 68, 0.8);
+            box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
             transition: top 0.3s ease;
-            top: -80px;
         }
-        header.show {
-            top: 0;
+
+        header h1 {
+            font-size: clamp(1rem, 3vw, 2.5rem);
+            margin: 0;
+            color: #f4f4f4;
         }
+
         .hero {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://raw.githubusercontent.com/dangsteve/your-repo/main/wallpaper.jpg');
-            background-size: cover;
-            background-position: center;
             text-align: center;
-            padding: 20px;
+            padding: 2vw;
             color: #fff;
         }
+
         .hero h1 {
-            font-size: 3.5em;
+            font-size: clamp(2.5rem, 6vw, 6rem);
         }
+
         .hero p {
-            font-size: 1.5em;
-            margin: 20px 0;
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            margin: 2vw 0;
         }
+
         .hero .buttons {
-            margin-top: 20px;
+            margin-top: 2vw;
         }
+
         .hero button {
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 1.5vw 3vw;
+            margin: 1vw;
             border: none;
             background-color: #c0392b;
             color: #fff;
-            border-radius: 5px;
-            font-size: 1.2em;
+            border-radius: 1vw;
+            font-size: clamp(1rem, 2vw, 1.5rem);
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .hero button:hover {
             background-color: #e74c3c;
         }
-        .skills, .projects, .experience {
-            padding: 100px 20px;
+
+        section {
+            padding: 10vh 2vw;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .skills .skills-grid, .projects .projects-grid, .experience .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+
+        .skills, .projects {
+            text-align: center;
         }
-        .skills .skill, .projects .project, .experience .experience-item {
-            background-color: #555;
-            padding: 20px;
-            border-radius: 10px;
+
+        .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16vw, 1fr)); /* Reduced min-width by 20% */
+            gap: 2.4vw; /* Reduced gap by 20% */
+        }
+
+        .skills-grid .skill, .projects-grid .project {
+            background-color: rgba(85, 85, 85, 0.9);
+            padding: 2.4vw; /* Reduced padding by 20% */
+            border-radius: 1.6vw; /* Reduced border-radius by 20% */
             text-align: center;
             transition: transform 0.3s ease;
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
         }
-        .skills .skill:hover, .projects .project:hover, .experience .experience-item:hover {
-            transform: scale(1.05);
+
+        .skills-grid .skill:hover, .projects-grid .project:hover {
+            transform: scale(1.1);
         }
-        .about .content {
+
+        .skills-grid .skill h3, .projects-grid .project h3 {
+            font-size: clamp(1rem, 2.4vw, 1.6rem); /* Reduced font size by 20% */
+            margin-bottom: 1.2vw; /* Reduced margin-bottom by 20% */
+        }
+
+        .projects-grid .project p {
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
+            margin-bottom: 1.6vw; /* Reduced margin-bottom by 20% */
+        }
+
+        .projects-grid a button {
+            padding: 1.2vw 1.6vw; /* Reduced padding by 20% */
+            font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* Reduced font size by 20% */
+        }
+
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10vh 2vw;
             text-align: center;
-            padding: 50px;
         }
+
         .about img {
-            width: 400px;
-            height: 400px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            width: clamp(240px, 24vw, 480px); /* Increased width by 20% */
+            height: clamp(240px, 24vw, 480px); /* Increased height by 20% */
+            border-radius: 2vw;
+            margin-bottom: 2vw;
+            box-shadow: 0 0.4vw 1.5vw rgba(0, 0, 0, 0.5);
         }
+
+        .about h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 2vw;
+            color: #f4f4f4;
+        }
+
         .about p {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.2em;
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            line-height: 1.6;
+            color: #f4f4f4;
         }
+
         footer {
-            padding: 20px;
+            padding: 2vw;
             text-align: center;
-            background-color: #444;
+            background-color: rgba(68, 68, 68, 0.8);
             color: #ccc;
         }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3em;
-            }
-            .hero p {
-                font-size: 1.2em;
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
+
         form {
             display: flex;
             flex-direction: column;
             max-width: 500px;
             margin: 0 auto;
         }
+
         form input, form textarea, form button {
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
+            margin: 1vw 0;
+            padding: 1.5vw;
+            border-radius: 1vw;
             border: none;
-            font-size: 1em;
+            font-size: clamp(1rem, 2vw, 1.5rem);
         }
+
         form button {
             background-color: #c0392b;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         form button:hover {
             background-color: #e74c3c;
         }
@@ -145,25 +197,18 @@
             const header = document.querySelector("header");
             document.addEventListener("mousemove", function(e) {
                 if (e.clientY < 50) {
-                    header.classList.add("show");
+                    header.style.top = "0";
                 } else {
-                    header.classList.remove("show");
+                    header.style.top = "-80px";
                 }
             });
         });
     </script>
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <h1>Steve Dang</h1>
-        </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <h1>Steve Dang</h1>
     </header>
 
     <section class="hero">
@@ -172,31 +217,50 @@
             <p>Data Analyst & Interactive Developer - Transforming data into meaningful insights.</p>
             <div class="buttons">
                 <button onclick="window.open('https://docs.google.com/document/d/1DhGuVp54EWZPLhCvXC3-s1asr6W8EtXd/edit?usp=sharing', '_blank')">View Resume</button>
+                <button onclick="window.open('https://github.com/dangsteve', '_blank')">View GitHub</button>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
-        <div class="content">
-            <img src="https://raw.githubusercontent.com/dangsteve/your-repo/main/steve.png" alt="Steve Dang">
-            <h2>About Me</h2>
-            <p>I am a passionate data analyst specializing in transforming data into actionable insights. Currently, I am studying Functional Data Analytics and Information Sciences and Technology at Pennsylvania State University, Class of 2026. My focus is on making complex data easily understandable for decision-making. I have experience in data visualization, web scraping, and creating interactive games that combine fun with analytical skills. My goal is to use technology and data-driven analysis to generate impactful solutions.</p>
-        </div>
+        <img src="https://github.com/dangsteve/sdang/raw/main/steve.png" alt="Steve Dang">
+        <h2>About Me</h2>
+        <p>I am a passionate data analyst specializing in transforming data into actionable insights. Currently, I am studying Functional Data Analytics and Information Sciences and Technology at Pennsylvania State University, Class of 2026. My focus is on making complex data easily understandable for decision-making. I have experience in data visualization, web scraping, and creating interactive games that combine fun with analytical skills. My goal is to use technology and data-driven analysis to generate impactful solutions.</p>
     </section>
 
     <section id="skills" class="skills">
         <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill">SQL</div>
-            <div class="skill">Python</div>
-            <div class="skill">R</div>
-            <div class="skill">HTML & CSS</div>
-            <div class="skill">C++</div>
-            <div class="skill">Data Analysis</div>
-            <div class="skill">Web Scraping</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Machine Learning Basics</div>
-            <div class="skill">Tableau</div>
+            <div class="skill">
+                <h3>SQL</h3>
+            </div>
+            <div class="skill">
+                <h3>Python</h3>
+            </div>
+            <div class="skill">
+                <h3>R</h3>
+            </div>
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+            </div>
+            <div class="skill">
+                <h3>C++</h3>
+            </div>
+            <div class="skill">
+                <h3>Data Analysis</h3>
+            </div>
+            <div class="skill">
+                <h3>Web Scraping</h3>
+            </div>
+            <div class="skill">
+                <h3>Data Visualization</h3>
+            </div>
+            <div class="skill">
+                <h3>Machine Learning Basics</h3>
+            </div>
+            <div class="skill">
+                <h3>Tableau</h3>
+            </div>
         </div>
     </section>
 
@@ -206,45 +270,57 @@
             <div class="project">
                 <h3>Car Analysis Script in Python</h3>
                 <p>Python game for analyzing car data and interacting with users through gameplay.</p>
-                <button onclick="window.open('Car.py', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Car.py" download>
+                    <button>Download Project</button>
+                </a>
             </div>
             <div class="project">
                 <h3>Student Expense Analysis in R</h3>
                 <p>An R script that performs linear regression on student costs and income to identify patterns and relationships.</p>
-                <button onclick="window.open('Student_Expense.R', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Student_Expense.R" download>
+                    <button>Download Project</button>
+                </a>
             </div>
             <div class="project">
                 <h3>Wait, Wait, Don't Tell Me Game in C++</h3>
                 <p>A C++ guessing game that challenges users to make guesses and provides feedback for a fun experience.</p>
-                <button onclick="window.open('Wait%2C%20Wait%2C%20Don%27t%20Tell%20Me.cpp', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Wait%2C%20Wait%2C%20Don%27t%20Tell%20Me.cpp" download>
+                    <button>Download Project</button>
+                </a>
             </div>
             <div class="project">
                 <h3>Yelp Data Scraping in R</h3>
                 <p>R script for web scraping data from Yelp to gather information for analysis.</p>
-                <button onclick="window.open('Yelp_Scraping.R', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Yelp_Scraping.R" download>
+                    <button>Download Project</button>
+                </a>
             </div>
             <div class="project">
                 <h3>Word Guessing Game in Python</h3>
                 <p>A Python game where users try to guess a secret word, with hints provided for each incorrect guess.</p>
-                <button onclick="window.open('Word_guessing.py', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Word_guessing.py" download>
+                    <button>Download Project</button>
+                </a>
             </div>
             <div class="project">
                 <h3>Budget Tracker in Python</h3>
                 <p>A Python script to help users track their expenses and manage their budget efficiently.</p>
-                <button onclick="window.open('Budget_Tracker.py', '_blank')">View Project</button>
+                <a href="https://github.com/dangsteve/sdang/raw/main/Budget_Tracker.py" download>
+                    <button>Download Project</button>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2 style="margin-left: 40px;">Contact</h2>
-        <div style="margin-left: 40px;">
-        <form action="mailto:dangstevework@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <h2 style="margin-left: 2vw;">Contact</h2>
+        <div style="margin-left: 2vw;">
+            <form action="https://formspree.io/f/xyzyoryo" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
@@ -252,4 +328,5 @@
         &copy; 2024 Steve Dang - All Rights Reserved
     </footer>
 </body>
+
 </html>
